@@ -1,5 +1,57 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Interest In...
+  form(action="/results" method="post")
+    label(for="description") Description:
+    br
+    textarea(id = "description" name= "description" cols=40 rows=5)
+    br
+    label(for="agree") Agree?
+    input(type="checkbox" name="agree" id= "agree" value = "agree")
+    br
+
+    label My Favorite animal is a:
+    br
+
+    input(type="radio" name="animals" id= "Dog" value = "dog")
+    label(for="dog") Dog
+
+    br
+    input(type="radio" name="animals" id= "Cat" value = "cat")
+    label(for="cat") Cat
+
+    br
+    input(type="radio" name="animals" id= "Cow" value = "cow")
+    label(for="cow") Cow
+
+    br
+    input(type="radio" name="animals" id= "Pig" value = "pig")
+    label(for="pig") Pig
+
+    br
+    input(type="radio" name="animals" id= "Turtle" value = "turtle")
+    label(for="turtle") Turtle
+
+    br
+    input(type="radio" name="animalsOther" id= "other" value = "noneOfThose")
+    label(for="other") Other
+    br
+
+    br
+    label(for="animalChoice") Choose One
+    br
+
+    select(from="words" name= "animalChoice" id="animalChoice")
+      option(value="1") Dogs & Cats
+      option(value="2") Horses & Ponys
+      option(value="3") Chickens & Roosters
+    br
+
+    br
+    input(type= "color" name= "favColor" id="favColor")
+    br
+
+    br
+    button(type="submit") Submit this
+    br
